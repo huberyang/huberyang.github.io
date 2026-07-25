@@ -1,0 +1,343 @@
+:root {
+  --bg: #fdf6f2;
+  --surface: #ffffff;
+  --text: #4a3f3d;
+  --text-soft: #8a7a76;
+  --accent: #e0879a;
+  --accent-soft: #f6d9df;
+  --line: #eaddd7;
+  --shadow: 0 10px 30px rgba(160, 100, 90, 0.08);
+  --radius: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241d1c;
+    --surface: #2f2726;
+    --text: #f2e9e6;
+    --text-soft: #c2aca7;
+    --accent: #f0a3b3;
+    --accent-soft: #4a3336;
+    --line: #453835;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: radial-gradient(circle at 50% 20%, var(--accent-soft), var(--bg) 70%);
+}
+
+.hero-eyebrow {
+  margin: 0;
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0.3em 0 0.6em;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-counter {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+#dayCount {
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hero-counter-label {
+  font-size: 1.2rem;
+  color: var(--text-soft);
+}
+
+.hero-since {
+  margin-top: 0.6rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.hero-scroll {
+  display: inline-block;
+  margin-top: 3rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+  text-decoration: none;
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---------- Section titles ---------- */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 3rem;
+}
+
+.timeline-section,
+.profile-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+
+.timeline-item.is-highlight .timeline-dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+
+.timeline-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.5rem;
+}
+
+.timeline-item.is-highlight .timeline-card {
+  border: 1px solid var(--accent-soft);
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.timeline-desc {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
+}
+
+.timeline-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+}
+
+.timeline-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-photo.is-placeholder::before {
+  content: "📷 待补充照片";
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.timeline-photo.is-placeholder img {
+  display: none;
+}
+
+/* ---------- Profile ---------- */
+.profile-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.profile-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-photo.is-placeholder::before {
+  content: "💕";
+  font-size: 2.5rem;
+}
+
+.profile-photo.is-placeholder img {
+  display: none;
+}
+
+.profile-facts {
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.profile-fact {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.5rem;
+}
+
+.profile-fact dt {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.profile-fact dd {
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 560px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .profile-fact {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem 4rem;
+  color: var(--text-soft);
+  letter-spacing: 0.2em;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 15, 14, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 100;
+  padding: 2rem;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
