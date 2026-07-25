@@ -87,7 +87,7 @@
   }
 
   function setupScrollReveal() {
-    const items = document.querySelectorAll(".timeline-item, .profile-card, .couple-photo-section");
+    const items = document.querySelectorAll(".timeline-item, .profile-card");
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -106,7 +106,7 @@
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
     document.addEventListener("click", (e) => {
-      const img = e.target.closest(".timeline-photo img, .profile-photo img, .couple-photo img");
+      const img = e.target.closest(".timeline-photo img, .profile-photo img");
       if (img && img.getAttribute("src")) {
         lightboxImg.src = img.src;
         lightbox.classList.add("is-open");

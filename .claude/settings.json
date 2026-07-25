@@ -11,7 +11,10 @@
       "Bash(python3 -c \"import json,sys\")",
       "Bash(node -e \"require\\('fs'\\).readFileSync\\('js/main.js','utf8'\\)\")",
       "Bash(sips -g all \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
-      "Bash(mdls -name kMDItemOrientation \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")"
+      "Bash(mdls -name kMDItemOrientation \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
+      "Bash(.venv-img/bin/python -c \"import playwright; print\\('ok'\\)\")",
+      "Bash(lsof -ti:8934 -sTCP:LISTEN)",
+      "Bash(git -C /Users/huberyyang/Desktop/huberyang.github.io status -s)"
     ]
   }
 }
