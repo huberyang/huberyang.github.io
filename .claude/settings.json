@@ -3,7 +3,15 @@
     "allow": [
       "Bash(.venv-img/bin/python -)",
       "Bash(cp \"/private/tmp/claude-501/-Users-huberyyang-Desktop-huberyang-github-io/e80aab68-e142-406f-8783-4b22b8a38924/scratchpad/preview_crop.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/profile.jpg\")",
-      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/profile.jpg\")"
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/profile.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Documents/guaiguai/我们两.HEIC\")",
+      "Bash(sips -s format jpeg -Z 1600 \"/Users/huberyyang/Documents/guaiguai/我们两.HEIC\" --out \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
+      "Bash(sips -r 180 \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
+      "Bash(python3 -c \"import json,sys\")",
+      "Bash(node -e \"require\\('fs'\\).readFileSync\\('js/main.js','utf8'\\)\")",
+      "Bash(sips -g all \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
+      "Bash(mdls -name kMDItemOrientation \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")"
     ]
   }
 }
