@@ -16,7 +16,8 @@
       "Bash(lsof -ti:8934 -sTCP:LISTEN)",
       "Bash(git -C /Users/huberyyang/Desktop/huberyang.github.io status -s)",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\")",
-      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/04-wechat.jpg\")"
+      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/04-wechat.jpg\")",
+      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/kiss.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\" && ls -la \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\")"
     ],
     "additionalDirectories": [
       "/Users/huberyyang/Documents/guaiguai"
