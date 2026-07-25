@@ -25,6 +25,13 @@
     return wrap;
   }
 
+  function photosNode(photoFiles, alt) {
+    const group = document.createElement("div");
+    group.className = "timeline-photos";
+    photoFiles.forEach((file) => group.appendChild(photoNode(file, alt)));
+    return group;
+  }
+
   function renderTimeline() {
     const list = document.getElementById("timelineList");
     TIMELINE.forEach((item, i) => {
@@ -55,7 +62,9 @@
       card.appendChild(date);
       card.appendChild(title);
       card.appendChild(desc);
-      card.appendChild(photoNode(item.photo, item.title));
+      card.appendChild(
+        item.photos ? photosNode(item.photos, item.title) : photoNode(item.photo, item.title)
+      );
 
       row.appendChild(card);
       list.appendChild(row);

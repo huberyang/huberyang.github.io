@@ -223,6 +223,16 @@ body {
   display: none;
 }
 
+.timeline-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.timeline-photos .timeline-photo {
+  aspect-ratio: 3 / 4;
+}
+
 /* ---------- Profile ---------- */
 .profile-card {
   background: var(--surface);

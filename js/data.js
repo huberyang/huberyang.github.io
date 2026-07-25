@@ -6,7 +6,7 @@ const TIMELINE = [
     date: "2025-12-23",
     title: "心动瞬间 💌",
     desc: "在交友软件上刷到你的照片，忍不住多看了几眼——然后我们匹配上了。",
-    photo: "01-matched.jpg"
+    photos: ["01-matched.jpg", "01-matched-2.jpg"]
   },
   {
     id: "hello",
