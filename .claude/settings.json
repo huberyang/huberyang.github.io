@@ -14,7 +14,12 @@
       "Bash(mdls -name kMDItemOrientation \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/couple.jpg\")",
       "Bash(.venv-img/bin/python -c \"import playwright; print\\('ok'\\)\")",
       "Bash(lsof -ti:8934 -sTCP:LISTEN)",
-      "Bash(git -C /Users/huberyyang/Desktop/huberyang.github.io status -s)"
+      "Bash(git -C /Users/huberyyang/Desktop/huberyang.github.io status -s)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\")",
+      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/04-wechat.jpg\")"
+    ],
+    "additionalDirectories": [
+      "/Users/huberyyang/Documents/guaiguai"
     ]
   }
 }

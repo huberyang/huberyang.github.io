@@ -23,8 +23,8 @@ const TIMELINE = [
   {
     id: "wechat",
     date: "2025-12-26",
-    title: "加了微信",
-    desc: "从这天起，我们的聊天就没有断过。",
+    title: "改变阵地到微信",
+    desc: "从这天起，我卸载了交友软件，想更认真地了解你——我们的聊天，也从此没有断过。",
     photo: "04-wechat.jpg"
   },
   {
