@@ -44,10 +44,26 @@ const TIMELINE = [
   },
   {
     id: "love-tree",
-    date: "2026-02-07",
+    date: "2026-03-21",
     title: "爱情树 🌳",
     desc: "那之后我们开始常常出来约会，一起去了好多次蓄水池——吹吹风，看看夕阳，看看水。我们并肩坐在池边，靠着彼此，心里很静，也很踏实。",
     photo: "07-love-tree.jpg"
+  },
+  {
+    id: "first-trip",
+    date: "2026-04-25",
+    title: "成都--熊猫之旅",
+    desc: "那之后我们开始常常出来约会，一起去了好多次蓄水池——吹吹风，看看夕阳，看看水。我们并肩坐在池边，靠着彼此，心里很静，也很踏实。",
+    photos: [
+      "08-first-trip.jpg",
+      "08-first-trip-2.jpg",
+      "08-first-trip-3.jpg",
+      "08-first-trip-4.jpg",
+      "08-first-trip-5.jpg",
+      "08-first-trip-6.jpg",
+      "08-first-trip-7.jpg",
+      "08-first-trip-8.jpg"
+    ]
   }
 ];
 
