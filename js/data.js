@@ -30,9 +30,9 @@ const TIMELINE = [
   {
     id: "official",
     date: "2026-01-31",
-    title: "确定关系 💑",
-    desc: "我们决定，从今以后是彼此的了。",
-    photo: "05-official.jpg",
+    title: "确定恋爱关系 💑",
+    desc: "这一天是我们两个的大日子，我们在海边确定了恋爱关系。我很认真地跟你告了白，你也害羞地表示了同意——我第一次把你抱在怀里，向你保证要一直对你好。",
+    photos: ["05-official.jpg", "05-official-2.jpg"],
     highlight: true
   },
   {

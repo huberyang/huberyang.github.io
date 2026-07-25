@@ -7,7 +7,7 @@
 | `profile.jpg` | 「关于她」头像 |
 | `01-matched.jpg` / `01-matched-2.jpg` | 心动瞬间 · 2025-12-23（可放多张） |
 | `04-wechat.jpg` | 改变阵地到微信 · 2025-12-26 |
-| `05-official.jpg` | 确定关系 · 2026-01-31 |
+| `05-official.jpg` / `05-official-2.jpg` | 确定恋爱关系 · 2026-01-31（可放多张） |
 | `06-first-kiss.jpg` | 第一次接吻 · 2026-02-06 |
 
 以后在 [js/data.js](../../js/data.js) 里新增时间线条目时，把新条目的 `photo` 字段设成对应文件名，再把图片放进这个文件夹就行。
