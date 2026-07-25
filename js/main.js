@@ -62,9 +62,11 @@
       card.appendChild(date);
       card.appendChild(title);
       card.appendChild(desc);
-      card.appendChild(
-        item.photos ? photosNode(item.photos, item.title) : photoNode(item.photo, item.title)
-      );
+      if (item.photos) {
+        card.appendChild(photosNode(item.photos, item.title));
+      } else if (item.photo) {
+        card.appendChild(photoNode(item.photo, item.title));
+      }
 
       row.appendChild(card);
       list.appendChild(row);
