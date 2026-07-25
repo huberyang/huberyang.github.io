@@ -119,11 +119,38 @@
     lightbox.addEventListener("click", () => lightbox.classList.remove("is-open"));
   }
 
+  function setupLoader() {
+    const loader = document.getElementById("loader");
+    const hero = document.getElementById("hero");
+    if (!loader || !hero) return;
+
+    document.body.classList.add("is-loading");
+    const minDelay = 1600;
+    const start = Date.now();
+
+    const reveal = () => {
+      const wait = Math.max(minDelay - (Date.now() - start), 0);
+      setTimeout(() => {
+        document.body.classList.remove("is-loading");
+        hero.classList.add("is-revealed");
+        loader.classList.add("is-hidden");
+        loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+      }, wait);
+    };
+
+    if (document.readyState === "complete") {
+      reveal();
+    } else {
+      window.addEventListener("load", reveal, { once: true });
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     renderDayCounter();
     renderTimeline();
     setupPhotoFallback();
     setupScrollReveal();
     setupLightbox();
+    setupLoader();
   });
 })();
