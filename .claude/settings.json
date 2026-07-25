@@ -17,7 +17,14 @@
       "Bash(git -C /Users/huberyyang/Desktop/huberyang.github.io status -s)",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\")",
       "Bash(cp \"/Users/huberyyang/Documents/guaiguai/wechat begin.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/04-wechat.jpg\")",
-      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/kiss.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\" && ls -la \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\")"
+      "Bash(cp \"/Users/huberyyang/Documents/guaiguai/kiss.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\" && ls -la \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/06-first-kiss.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Documents/guaiguai/love tree.JPG\")",
+      "Bash(sips -c 200 500 -x 1240 -y 900 \"/Users/huberyyang/Documents/guaiguai/love tree.JPG\" --out crop_check.jpg)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"import PIL; print\\('ok'\\)\")",
+      "Bash(python3 -m venv /private/tmp/claude-501/-Users-huberyyang-Desktop-huberyang-github-io/a12a39f5-0a94-4a86-88ca-ea8447f28715/scratchpad/venv)",
+      "Bash(/private/tmp/claude-501/-Users-huberyyang-Desktop-huberyang-github-io/a12a39f5-0a94-4a86-88ca-ea8447f28715/scratchpad/venv/bin/pip install *)",
+      "Bash(./venv/bin/python3 -c ' *)"
     ],
     "additionalDirectories": [
       "/Users/huberyyang/Documents/guaiguai"
