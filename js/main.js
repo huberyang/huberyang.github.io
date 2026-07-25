@@ -1,4 +1,9 @@
 (function () {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
+
   function formatDate(iso) {
     const d = new Date(iso + "T00:00:00");
     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
@@ -131,6 +136,7 @@
     const reveal = () => {
       const wait = Math.max(minDelay - (Date.now() - start), 0);
       setTimeout(() => {
+        window.scrollTo(0, 0);
         document.body.classList.remove("is-loading");
         hero.classList.add("is-revealed");
         loader.classList.add("is-hidden");
