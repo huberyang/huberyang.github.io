@@ -307,7 +307,7 @@ body.is-loading {
   margin-top: 0.6rem;
   color: var(--text-soft);
   font-size: 0.95rem;
-  font-style: italic;
+  letter-spacing: 0.04em;
 }
 
 .hero-scroll {
@@ -449,7 +449,7 @@ body.is-loading {
   padding-left: 1.5rem;
   color: var(--text-soft);
   font-family: var(--font-serif);
-  font-style: italic;
+  letter-spacing: 0.02em;
   line-height: 1.75;
 }
 
@@ -603,7 +603,6 @@ body.is-loading {
   padding: 3rem 1.5rem 4rem;
   color: var(--text-soft);
   font-family: var(--font-serif);
-  font-style: italic;
   font-size: 1.05rem;
   letter-spacing: 0.25em;
 }
@@ -613,7 +612,6 @@ body.is-loading {
   content: "♡";
   display: inline-block;
   margin: 0 0.6em;
-  font-style: normal;
   color: var(--accent);
   opacity: 0.6;
 }
