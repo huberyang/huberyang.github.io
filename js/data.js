@@ -64,7 +64,14 @@ const TIMELINE = [
       "08-first-trip-7.jpg",
       "08-first-trip-8.jpg"
     ]
-  }
+  },
+  {
+    id: "happy-birthday",
+    date: "2026-06-17",
+    title: "快乐的生日时光",
+    desc: "生日那天，乖乖精心准备惊喜与祝福，温暖的陪伴和甜蜜的笑容，让这个特别的日子充满幸福与美好回忆。",
+    photos: ["09-happy-birthday.jpg", "09-happy-birthday-2.jpg", "09-happy-birthday-3.jpg"]
+  },
 ];
 
 // 用于首页倒数天数的起点：默认取“确定关系”那天。
