@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv-img/bin/python -)",
+      "Bash(cp \"/private/tmp/claude-501/-Users-huberyyang-Desktop-huberyang-github-io/e80aab68-e142-406f-8783-4b22b8a38924/scratchpad/preview_crop.jpg\" \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/profile.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/huberyyang/Desktop/huberyang.github.io/assets/photos/profile.jpg\")"
+    ]
+  }
+}
