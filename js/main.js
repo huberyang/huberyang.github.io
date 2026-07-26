@@ -128,11 +128,11 @@
     const field = document.getElementById("starfield");
     if (!field) return;
 
-    const count = 80;
+    const count = 160;
     const frag = document.createDocumentFragment();
     for (let i = 0; i < count; i++) {
       const star = document.createElement("span");
-      const size = (Math.random() * 1.8 + 1).toFixed(2);
+      const size = (Math.random() * 3.6 + 2).toFixed(2);
       star.style.setProperty("--x", `${(Math.random() * 100).toFixed(2)}%`);
       star.style.setProperty("--y", `${(Math.random() * 100).toFixed(2)}%`);
       star.style.setProperty("--size", `${size}px`);

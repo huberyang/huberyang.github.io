@@ -190,14 +190,17 @@ body.is-loading {
   position: absolute;
   top: var(--y);
   left: var(--x);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  background: var(--accent);
+  font-size: var(--size);
+  line-height: 1;
+  color: var(--accent);
   opacity: 0;
   filter: blur(0.4px);
   animation: twinkle var(--dur) ease-in-out infinite;
   animation-delay: var(--delay);
+}
+
+.starfield span::before {
+  content: "♥";
 }
 
 @media (prefers-reduced-motion: reduce) {
