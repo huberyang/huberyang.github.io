@@ -549,6 +549,7 @@ body.is-loading {
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0.5rem;
   scrollbar-width: none;
+  cursor: grab;
   mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
 }
 
@@ -556,57 +557,21 @@ body.is-loading {
   display: none;
 }
 
+.timeline-photos.is-scrollable.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
 .timeline-photos.is-scrollable .timeline-photo {
   flex: 0 0 65%;
   scroll-snap-align: start;
+  user-select: none;
 }
 
 @media (min-width: 640px) {
   .timeline-photos.is-scrollable .timeline-photo {
     flex-basis: 38%;
   }
-}
-
-.timeline-photos-wrap {
-  position: relative;
-}
-
-.photos-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--accent-deep);
-  font-size: 1.3rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  z-index: 2;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.photos-nav:hover {
-  transform: translateY(-50%) scale(1.08);
-}
-
-.photos-nav:disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.photos-nav-prev {
-  left: 0.4rem;
-}
-
-.photos-nav-next {
-  right: 0.4rem;
 }
 
 /* ---------- Profile ---------- */

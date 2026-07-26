@@ -31,47 +31,57 @@
   }
 
   function photosNode(photoFiles, alt) {
-    const scrollable = photoFiles.length > 4;
     const group = document.createElement("div");
-    group.className = "timeline-photos" + (scrollable ? " is-scrollable" : "");
+    group.className = "timeline-photos" + (photoFiles.length > 4 ? " is-scrollable" : "");
     photoFiles.forEach((file) => group.appendChild(photoNode(file, alt)));
-
-    if (!scrollable) return group;
-
-    const wrap = document.createElement("div");
-    wrap.className = "timeline-photos-wrap";
-    wrap.appendChild(group);
-    wrap.appendChild(photosNavButton("prev", "上一张", group));
-    wrap.appendChild(photosNavButton("next", "下一张", group));
-    return wrap;
+    return group;
   }
 
-  function photosNavButton(dir, label, group) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = `photos-nav photos-nav-${dir}`;
-    btn.setAttribute("aria-label", label);
-    btn.textContent = dir === "prev" ? "‹" : "›";
+  // 让 .is-scrollable 的图片条也能用鼠标左右拖动查看（触屏已原生支持滑动）。
+  function setupPhotoDrag() {
+    document.querySelectorAll(".timeline-photos.is-scrollable").forEach((group) => {
+      let dragging = false;
+      let moved = false;
+      let startX = 0;
+      let startScroll = 0;
 
-    const step = () => {
-      const gap = parseFloat(getComputedStyle(group).columnGap) || 0;
-      const first = group.querySelector(".timeline-photo");
-      return (first ? first.getBoundingClientRect().width : group.clientWidth) + gap;
-    };
+      group.addEventListener("dragstart", (e) => e.preventDefault());
 
-    btn.addEventListener("click", () => {
-      group.scrollBy({ left: dir === "prev" ? -step() : step(), behavior: "smooth" });
+      group.addEventListener("pointerdown", (e) => {
+        if (e.pointerType !== "mouse") return;
+        dragging = true;
+        moved = false;
+        startX = e.clientX;
+        startScroll = group.scrollLeft;
+        group.classList.add("is-dragging");
+      });
+
+      window.addEventListener("pointermove", (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 4) moved = true;
+        group.scrollLeft = startScroll - dx;
+      });
+
+      const stopDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        group.classList.remove("is-dragging");
+      };
+      window.addEventListener("pointerup", stopDrag);
+      window.addEventListener("pointercancel", stopDrag);
+
+      group.addEventListener(
+        "click",
+        (e) => {
+          if (moved) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        },
+        true
+      );
     });
-
-    const updateState = () => {
-      const max = group.scrollWidth - group.clientWidth - 1;
-      btn.disabled = dir === "prev" ? group.scrollLeft <= 0 : group.scrollLeft >= max;
-    };
-    group.addEventListener("scroll", updateState, { passive: true });
-    window.addEventListener("resize", updateState);
-    requestAnimationFrame(updateState);
-
-    return btn;
   }
 
   function renderTimeline() {
@@ -214,6 +224,7 @@
     setupPhotoFallback();
     setupScrollReveal();
     setupLightbox();
+    setupPhotoDrag();
     setupLoader();
   });
 })();
