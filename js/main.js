@@ -31,10 +31,47 @@
   }
 
   function photosNode(photoFiles, alt) {
+    const scrollable = photoFiles.length > 4;
     const group = document.createElement("div");
-    group.className = "timeline-photos";
+    group.className = "timeline-photos" + (scrollable ? " is-scrollable" : "");
     photoFiles.forEach((file) => group.appendChild(photoNode(file, alt)));
-    return group;
+
+    if (!scrollable) return group;
+
+    const wrap = document.createElement("div");
+    wrap.className = "timeline-photos-wrap";
+    wrap.appendChild(group);
+    wrap.appendChild(photosNavButton("prev", "上一张", group));
+    wrap.appendChild(photosNavButton("next", "下一张", group));
+    return wrap;
+  }
+
+  function photosNavButton(dir, label, group) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `photos-nav photos-nav-${dir}`;
+    btn.setAttribute("aria-label", label);
+    btn.textContent = dir === "prev" ? "‹" : "›";
+
+    const step = () => {
+      const gap = parseFloat(getComputedStyle(group).columnGap) || 0;
+      const first = group.querySelector(".timeline-photo");
+      return (first ? first.getBoundingClientRect().width : group.clientWidth) + gap;
+    };
+
+    btn.addEventListener("click", () => {
+      group.scrollBy({ left: dir === "prev" ? -step() : step(), behavior: "smooth" });
+    });
+
+    const updateState = () => {
+      const max = group.scrollWidth - group.clientWidth - 1;
+      btn.disabled = dir === "prev" ? group.scrollLeft <= 0 : group.scrollLeft >= max;
+    };
+    group.addEventListener("scroll", updateState, { passive: true });
+    window.addEventListener("resize", updateState);
+    requestAnimationFrame(updateState);
+
+    return btn;
   }
 
   function renderTimeline() {
