@@ -196,7 +196,7 @@
     if (!loader || !hero) return;
 
     document.body.classList.add("is-loading");
-    const minDelay = 6000;
+    const minDelay = 5000;
     const start = Date.now();
 
     const reveal = () => {
