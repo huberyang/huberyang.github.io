@@ -124,6 +124,25 @@
     lightbox.addEventListener("click", () => lightbox.classList.remove("is-open"));
   }
 
+  function setupStarfield() {
+    const field = document.getElementById("starfield");
+    if (!field) return;
+
+    const count = 80;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement("span");
+      const size = (Math.random() * 1.8 + 1).toFixed(2);
+      star.style.setProperty("--x", `${(Math.random() * 100).toFixed(2)}%`);
+      star.style.setProperty("--y", `${(Math.random() * 100).toFixed(2)}%`);
+      star.style.setProperty("--size", `${size}px`);
+      star.style.setProperty("--dur", `${(Math.random() * 3 + 3).toFixed(2)}s`);
+      star.style.setProperty("--delay", `${(Math.random() * 5).toFixed(2)}s`);
+      frag.appendChild(star);
+    }
+    field.appendChild(frag);
+  }
+
   function setupLoader() {
     const loader = document.getElementById("loader");
     const hero = document.getElementById("hero");
@@ -152,6 +171,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    setupStarfield();
     renderDayCounter();
     renderTimeline();
     setupPhotoFallback();

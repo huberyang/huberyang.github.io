@@ -177,6 +177,36 @@ body.is-loading {
   }
 }
 
+/* ---------- Starfield (whole page) ---------- */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.starfield span {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  filter: blur(0.4px);
+  animation: twinkle var(--dur) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield span {
+    animation: none;
+    opacity: 0.25;
+  }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
