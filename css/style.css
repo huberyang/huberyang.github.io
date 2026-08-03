@@ -682,22 +682,6 @@ body.is-loading {
   opacity: 0.6;
 }
 
-/* ---------- Site footer ---------- */
-.site-footer {
-  text-align: center;
-  padding: 0 1.5rem 3rem;
-}
-
-.visit-counter {
-  opacity: 0.65;
-  border-radius: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.visit-counter:hover {
-  opacity: 1;
-}
-
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;
