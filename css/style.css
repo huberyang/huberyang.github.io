@@ -541,6 +541,10 @@ body.is-loading {
   aspect-ratio: 3 / 4;
 }
 
+.timeline-photos.is-stack {
+  grid-template-columns: 1fr;
+}
+
 .timeline-photos.is-scrollable {
   display: flex;
   grid-template-columns: none;
@@ -665,6 +669,10 @@ body.is-loading {
 
 /* ---------- Footer ---------- */
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
   text-align: center;
   padding: 3rem 1.5rem 4rem;
   color: var(--text-soft);
@@ -673,13 +681,11 @@ body.is-loading {
   letter-spacing: 0.25em;
 }
 
-.footer::before,
-.footer::after {
-  content: "♡";
-  display: inline-block;
-  margin: 0 0.6em;
-  color: var(--accent);
-  opacity: 0.6;
+.footer-icon {
+  width: 1.8em;
+  height: 1.8em;
+  object-fit: contain;
+  opacity: 0.85;
 }
 
 /* ---------- Lightbox ---------- */

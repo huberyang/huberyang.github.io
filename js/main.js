@@ -30,9 +30,12 @@
     return wrap;
   }
 
-  function photosNode(photoFiles, alt) {
+  function photosNode(photoFiles, alt, layout) {
     const group = document.createElement("div");
     group.className = "timeline-photos" + (photoFiles.length > 4 ? " is-scrollable" : "");
+    if (layout) {
+      group.classList.add(`is-${layout}`);
+    }
     photoFiles.forEach((file) => group.appendChild(photoNode(file, alt)));
     return group;
   }
@@ -115,7 +118,7 @@
       card.appendChild(title);
       card.appendChild(desc);
       if (item.photos) {
-        card.appendChild(photosNode(item.photos, item.title));
+        card.appendChild(photosNode(item.photos, item.title, item.photosLayout));
       } else if (item.photo) {
         card.appendChild(photoNode(item.photo, item.title));
       }
