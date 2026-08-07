@@ -66,11 +66,25 @@ const TIMELINE = [
     ]
   },
   {
+    id: "shoulder",
+    date: "2026-05-31",
+    title: "最踏实的肩膀",
+    desc: "女孩轻轻依偎在她心中最踏实的肩膀上，挽着那只她想一辈子都不愿松开的手臂。",
+    photo: "09-shoulder.jpg"
+  },
+  {
     id: "happy-birthday",
     date: "2026-06-17",
     title: "快乐的生日时光",
     desc: "生日那天，乖乖精心准备惊喜与祝福，温暖的陪伴和甜蜜的笑容，让这个特别的日子充满幸福与美好回忆。",
-    photos: ["09-happy-birthday.jpg", "09-happy-birthday-2.jpg", "09-happy-birthday-3.jpg", "09-happy-birthday-4.jpg"]
+    photos: ["10-happy-birthday.jpg", "10-happy-birthday-2.jpg", "10-happy-birthday-3.jpg", "10-happy-birthday-4.jpg"]
+  },
+  {
+    id: "deepest-love",
+    date: "2026-08-08",
+    title: "可爱的方式，深切的爱意",
+    desc: "女孩用她的方式表达最深切的爱意。",
+    photos: ["11-deepest-love.jpg", "11-deepest-love-2.jpg"]
   },
 ];
 
